@@ -20,9 +20,16 @@ function newText(str){
 }
 
 function source(image, str){
-    const imageSource = document.querySelector(img)
-    image.src(str);
+    const newImage = document.createElement(image);
+    newImage.src= str;
+    return newImage;
+
+
+    // const imageSource = document.querySelector(img)
+    // image.src(str);
 }
+
+
 
 function sameClass(element1,element2){
 const newClass = element1.class
@@ -48,9 +55,12 @@ append(newLi);
 append(newLi2);
 append(newLi3);
 
-const newSource = source('')
-
-
+const newSource = source(image, 'https://d17fnq9dkz9hgj.cloudfront.net/uploads/2012/11/152964589-welcome-home-new-cat-632x475.jpg')
+const newTagId = tagId(image, 'hello');
+const newFunction = append2(tagId);
+const settingSameId = sameClass('#thing-1','#thing-2')
+const anotherSettingSameId = sameClass ('#thing-1','#thing-c')
+const changingColor = colorId('light green' ,'heading');
 
 // const newSource = source('link')
 // const abc = append2(source);

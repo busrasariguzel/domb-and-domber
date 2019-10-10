@@ -22,7 +22,7 @@ function newText(str){
 function source(image, str){
     const newImage = document.createElement(image);
     newImage.src= str;
-    return newImage;
+    // return newImage;
 
 
     // const imageSource = document.querySelector(img)
@@ -55,7 +55,7 @@ append(newLi);
 append(newLi2);
 append(newLi3);
 
-const newSource = source(image, 'https://d17fnq9dkz9hgj.cloudfront.net/uploads/2012/11/152964589-welcome-home-new-cat-632x475.jpg')
+const newSource = source(image, 'https://media2.giphy.com/media/2TP6yaW6zVxq8/giphy.webp?cid=790b7611194bc161696c31c568a166465748c29c4f1a6365&rid=giphy.webp')
 const newTagId = tagId(image, 'hello');
 const newFunction = append2(tagId);
 const settingSameId = sameClass('#thing-1','#thing-2')
@@ -67,3 +67,71 @@ const changingColor = colorId('light green' ,'heading');
 // const abcde = sameClass(append2);
 
 
+// HIS SOLUTIONS
+// first question
+function appendToList(element){
+    const list = document.querySelector('ul');
+    list.appendChild(element);
+}
+// how to test it- use below to test if the function is working
+const heading = document.createElement('h1');
+heading.innerText = 'TEST'
+appendToList(heading);
+
+// ----
+// second question
+
+function appendToLorem(element){
+    const loremDiv = document.querySelector('#lorem');
+    loremDiv.appendChild(element);
+}
+// how to check
+
+const item = document.createElement('li');
+item.innerText = 'TEST'
+
+function makeListItem(text){
+const item = document.createElement('li');
+item.innerText = text
+return item;
+}
+const item= makeListItem('TESTY')
+appendToLorem(item)
+
+// image question
+
+function addUrlToImage(url,image){
+    image.src = url;
+}
+// to tes
+
+const newImage = document.createElement('img');
+const url = LINK
+addUrlToImage(url, newImage);
+appendToList(newImage);
+
+function cloneClass(elementWithOriginalClass,elementToGiveClassTo){
+elementToGiveClassTo.className= elementWithOriginalClass.className
+
+}
+const thing1= document.querySelector('#thing-1');
+const thing2= document.querySelector('#thing-2');
+const thingC= document.querySelector('#thing-c');
+cloneClass(thing1,thing2);
+cloneClass(thing1,thingC);
+
+function makeElementWithId(tagName , id){
+    const newElement= document.createElement(tagname);
+    newElement.id = id;
+    return newElement;
+}
+
+const newImage = makeElementWithId('img' , 'dino')
+
+function giveColorToElement(id,color){
+    const element = document.querySelector(id)
+    element.style.color = color;
+
+}
+
+giveColorToElement('#heading', 'green')
